@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
@@ -9,7 +9,21 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Sheryus Test';
-  
-}
+
+export class AppComponent implements OnInit {
+  title = 'angular-routing';
+  footerUrl = 'https://www';
+  footerLink = 'www.C&G.fr';
+  ngOnInit(): void {
+
+    const navMain = document.getElementById('navbarCollapse');
+    if (navMain) {
+      navMain.onclick = function onClick() {
+        if (navMain) {
+          navMain.classList.remove("show");
+        }
+      }
+    }
+  }
+
+} 
